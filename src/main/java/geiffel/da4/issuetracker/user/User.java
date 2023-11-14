@@ -1,18 +1,47 @@
 package geiffel.da4.issuetracker.user;
 
+//import geiffel.da4.issuetracker.commentaire.Commentaire;
+import geiffel.da4.issuetracker.commentaire.Commentaire;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.validation.constraints.Max;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
+@Entity
 public class User {
 
+    @Id
     private Long id;
+
     private String nom;
+    
     private Fonction fonction;
+    @OneToMany
+    private List<Commentaire> commentaireEcrits;
+
+
+    public User() {
+    }
 
     public User(Long id, String nom, Fonction fonction) {
         this.id = id;
         this.nom = nom;
         this.fonction = fonction;
+        this.commentaireEcrits= new ArrayList<>();
+
     }
+
+    public void addCommentaire(Commentaire commentaire){
+        this.commentaireEcrits.add(commentaire);
+
+    }
+
+
 
     public Long getId() {
         return id;
@@ -38,6 +67,15 @@ public class User {
         this.fonction = fonction;
     }
 
+    public List<Commentaire> getCommentaireEcrits() {
+        return commentaireEcrits;
+    }
+
+    public void setCommentaireEcrits(List<Commentaire> commentaireEcrits) {
+        this.commentaireEcrits = commentaireEcrits;
+    }
+
+
     @Override
     public boolean equals(Object obj) {
         if (getClass() != obj.getClass()){
@@ -48,4 +86,6 @@ public class User {
             this.nom.equals(comparing.getNom()) &&
             this.fonction == comparing.getFonction();
     }
+
+
 }
