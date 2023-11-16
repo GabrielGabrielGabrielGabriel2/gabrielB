@@ -5,6 +5,13 @@ plugins {
     id("org.sonarqube") version "4.4.1.3373"
 }
 
+sonar {
+    properties {
+        property("sonar.projectKey", "GabrielGabrielGabrielGabriel2_gabrielB")
+        property("sonar.organization", "gabrielgabrielgabrielgabriel2")
+        property("sonar.host.url", "https://sonarcloud.io")
+    }
+}
 group = 'geiffel.da4'
 version = '0.0.1-SNAPSHOT'
 
@@ -18,13 +25,7 @@ repositories {
 
 
 
-sonar {
-    properties {
-        property("sonar.projectKey", "GabrielGabrielGabrielGabriel2_gabrielB")
-        property("sonar.organization", "gabrielgabrielgabrielgabriel2")
-        property("sonar.host.url", "https://sonarcloud.io")
-    }
-}
+
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'

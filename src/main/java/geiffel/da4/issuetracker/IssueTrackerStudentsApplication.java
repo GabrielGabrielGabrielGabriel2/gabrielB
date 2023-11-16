@@ -3,7 +3,6 @@ package geiffel.da4.issuetracker;
 import geiffel.da4.issuetracker.user.Fonction;
 import geiffel.da4.issuetracker.user.User;
 import geiffel.da4.issuetracker.user.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
