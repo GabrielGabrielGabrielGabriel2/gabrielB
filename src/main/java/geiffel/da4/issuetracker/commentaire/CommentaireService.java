@@ -1,8 +1,10 @@
 package geiffel.da4.issuetracker.commentaire;
 
+import org.springframework.stereotype.Service;
+
 import java.util.Collection;
 import java.util.List;
-
+@Service
 public interface CommentaireService {
     List<Commentaire> getAll();
 
