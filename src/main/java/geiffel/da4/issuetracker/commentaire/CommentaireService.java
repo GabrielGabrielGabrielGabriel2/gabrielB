@@ -14,7 +14,7 @@ public interface CommentaireService {
 
     List<Commentaire> getAllByIssueCode(Long code);
 
-    Commentaire create(Commentaire commentaire6);
+    Commentaire create(Commentaire commentaire);
 
     void update(Long id, Commentaire toUpdate1);
 
