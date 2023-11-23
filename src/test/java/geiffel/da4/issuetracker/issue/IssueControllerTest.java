@@ -116,26 +116,26 @@ public class IssueControllerTest {
         assertEquals(issue, issue_received.getValue());
     }
 
-//    @Test
-//    void whenDelete_shouldCallServiceWithCorrectCode() throws Exception {
-//        Long code_toSend = 1L;
-//
-//        mockMvc.perform(delete("/issues/"+code_toSend)
-//        ).andExpect(status().isNoContent()
-//        ).andDo(print()).andReturn();
-//
-//        ArgumentCaptor<Long> code_received = ArgumentCaptor.forClass(Long.class);
-//        Mockito.verify(issueService).delete(code_received.capture());
-//        assertEquals(code_toSend, code_received.getValue());
-//    }
-//
-//    @Test
-//    void whenDeleteNonExistingResource_shouldGet404() throws Exception {
-//        Mockito.doThrow(ResourceNotFoundException.class).when(issueService).delete(Mockito.anyLong());
-//
-//        mockMvc.perform(delete("/issues/972")
-//        ).andExpect(status().isNotFound()
-//        ).andDo(print()).andReturn();
-//    }
-//
+    @Test
+    void whenDelete_shouldCallServiceWithCorrectCode() throws Exception {
+        Long code_toSend = 1L;
+
+        mockMvc.perform(delete("/issues/"+code_toSend)
+        ).andExpect(status().isNoContent()
+        ).andDo(print()).andReturn();
+
+        ArgumentCaptor<Long> code_received = ArgumentCaptor.forClass(Long.class);
+        Mockito.verify(issueService).delete(code_received.capture());
+        assertEquals(code_toSend, code_received.getValue());
+    }
+
+    @Test
+    void whenDeleteNonExistingResource_shouldGet404() throws Exception {
+        Mockito.doThrow(ResourceNotFoundException.class).when(issueService).delete(Mockito.anyLong());
+
+        mockMvc.perform(delete("/issues/972")
+        ).andExpect(status().isNotFound()
+        ).andDo(print()).andReturn();
+    }
+
 }
